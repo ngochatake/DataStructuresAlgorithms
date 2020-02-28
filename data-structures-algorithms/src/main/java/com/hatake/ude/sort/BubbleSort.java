@@ -2,12 +2,12 @@ package com.hatake.ude.sort;
 
 public class BubbleSort {
     public static void main(String[] args) {
-        int[] intArray = {5, -32, 11, -2, 99, 62};
+        int[] intArray = { 20, 35, -15, 7, 55, 1, -22 };
 
-        for (int i = 0; i < intArray.length; i++) {
-           for (int j = i; j < intArray.length - 1; j++) {
-               if (intArray[j] > intArray[j + 1]) {
-                   swap(intArray, j, j + 1 );
+        for (int lastUnsortedIndex = intArray.length - 1; lastUnsortedIndex > 0; lastUnsortedIndex--) {
+           for (int i = 0; i < lastUnsortedIndex; i++) {
+               if (intArray[i] > intArray[i + 1]) {
+                   swap(intArray, i, i + 1 );
                }
            }
         }
@@ -17,9 +17,14 @@ public class BubbleSort {
         }
     }
 
-    public static void swap(int[] IntArray, int i, int j) {
-        int temp = IntArray[i];
-        IntArray[i] = IntArray[j];
-        IntArray[j] = temp;
+    public static void swap(int[] array, int i, int j) {
+
+        if (i == j) {
+            return;
+        }
+
+        int temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
     }
 }
