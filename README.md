@@ -16,3 +16,8 @@ One solution
 $ git checkout filename
 To discard the change and the file will be replaced by committed local = reverted back to local history
 Then run $ git pull origin master
+
+! [rejected]        master -> master (non-fast-forward)
+$ git pull origin master
+to get latest source from origin master. Refer to: https://stackoverflow.com/questions/2883840/differences-between-git-pull-origin-master-git-pull-origin-master
+This case, because the changes in README.rd is newest, but not in my local. !!!Find the different!!!
